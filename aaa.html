@@ -1,0 +1,49 @@
+<html>
+<head>
+<title>Reference Designer Title </title>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</script>
+
+</head>
+<body>
+
+$$ \int {\frac{e^x+\cos(x)}{e^x+\sin(x)}}{dx} $$
+Here is the solution to the integral:
+
+$$ \int {\frac{e^x+\cos(x)}{e^x+\sin(x)}}{dx} = \int {\frac{e^x}{e^x+\sin(x)}}{dx} + \int {\frac{\cos(x)}{e^x+\sin(x)}}{dx} $$
+
+Let's solve the first integral. We can use substitution by letting $u = e^x + \sin(x)$ and $du = (e^x + \cos(x)) dx$:
+
+$$ \int {\frac{e^x}{e^x+\sin(x)}}{dx} = \int {\frac{1}{u}}{du} = \ln|u| + C_1 = \ln|e^x + \sin(x)| + C_1 $$
+
+Now let's solve the second integral. We can use integration by parts by letting $u = \cos(x)$ and $dv = \frac{1}{e^x + \sin(x)} dx$. Then $du = -\sin(x) dx$ and $v = \int {\frac{1}{e^x + \sin(x)}}{dx}$.
+
+We can use substitution again by letting $t = e^{-x}$ and $dt = -e^{-x} dx$:
+
+$$ v = \int {\frac{1}{e^x + \sin(x)}}{dx} = -\int {\frac{-e^{-x}}{\sin(x) - e^{-x}}}{dx} $$
+
+$$ = -\int {\frac{-dt}{\frac{\sin(x)}{t} - 1}} $$
+
+$$ = -\ln|\frac{\sin(x)}{t} - 1| + C_2 $$
+
+$$ = -\ln|\sin(x) - e^{-x}| + C_2 $$
+
+Therefore, the second integral is:
+
+$$ \int {\frac{\cos(x)}{e^x+\sin(x)}}{dx} = \cos(x) (-\ln|\sin(x) - e^{-x}|) + C_2 $$
+
+Thus, the solution to the integral is:
+
+$$ \int {\frac{e^x+\cos(x)}{e^x+\sin(x)}}{dx} = \ln|e^x + \sin(x)| -\cos(x) (\ln|\sin(x) - e^{-x}|) + C $$
+
+ソース: Bing との会話 2023/10/20
+(1) Table of Integrals - UMD. https://www.physics.umd.edu/hep/drew/IntegralTable.pdf.
+(2) Integration by parts: ∫𝑒ˣ⋅cos(x)dx (video) | Khan Academy. https://www.khanacademy.org/math/ap-calculus-bc/bc-integration-new/bc-6-11/v/integration-by-parts-of-e-x-cos-x-1.
+(3) Integral of x sin x - Formula, Proof, Examples | Integration of .... https://www.cuemath.com/calculus/integral-of-xsinx/.
+(4) Solve =e^sinx | Microsoft Math Solver. https://mathsolver.microsoft.com/en/solve-problem/%3D%20e%20%5E%20%7B%20%60sin%20x%20%7D.
+
+
+</body>
+</html>
